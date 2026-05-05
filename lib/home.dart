@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:proyecto/map.dart';
+import 'package:proyecto/profile.dart';
+import 'package:proyecto/settings.dart';
 import 'package:proyecto/utils/constants.dart' as con;
 
 class Home extends StatefulWidget {
@@ -194,6 +196,21 @@ class _HomeState extends State<Home> {
         selectedItemColor: con.colorSel,
         unselectedItemColor: con.colorBlight,
         type: BottomNavigationBarType.fixed,
+        currentIndex: 0,
+        onTap: (index) {
+          if(index == 3) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => Profile()),
+            );
+          }
+          if(index == 4) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => Settings()),
+            );
+          }
+        },
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: "Library"),
