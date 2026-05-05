@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto/home.dart';
+import 'package:proyecto/rank.dart';
 import 'package:proyecto/settings.dart';
 import 'package:proyecto/utils/constants.dart' as con;
 
@@ -29,7 +30,7 @@ class _ProfileState extends State<Profile> {
                       "Profile",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold
                       ),
                     ),
@@ -197,6 +198,12 @@ class _ProfileState extends State<Profile> {
               MaterialPageRoute(builder: (_) => Home()),
             );
           }
+          if(index == 2) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => Rank()),
+            );
+          }
           if(index == 4) {
             Navigator.pushReplacement(
               context,
@@ -207,7 +214,7 @@ class _ProfileState extends State<Profile> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: "Library"),
-          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: "Rank"),
+          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: "Path"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
         ],

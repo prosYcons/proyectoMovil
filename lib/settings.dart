@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:proyecto/home.dart';
 import 'package:proyecto/login.dart';
 import 'package:proyecto/profile.dart';
+import 'package:proyecto/rank.dart';
 import 'package:proyecto/utils/constants.dart' as con;
 
 class Settings extends StatefulWidget {
@@ -34,7 +35,7 @@ class _SettingsState extends State<Settings> {
                       "Settings",
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 20,
                           fontWeight: FontWeight.bold
                       ),
                     ),
@@ -85,7 +86,7 @@ class _SettingsState extends State<Settings> {
               sectionTitle("Personal Information"),
 
               infoCard([
-                infoTile(Icons.person, "Full Name", "Josu{e Cedillo"),
+                infoTile(Icons.person, "Full Name", "Josué Cedillo"),
                 divider(),
                 infoTile(Icons.email, "Email Address", "josue@gmail.com"),
               ]),
@@ -183,12 +184,18 @@ class _SettingsState extends State<Settings> {
         selectedItemColor: con.colorSel,
         unselectedItemColor: con.colorBlight,
         type: BottomNavigationBarType.fixed,
-        currentIndex: 3,
+        currentIndex: 4,
         onTap: (index) {
           if(index == 0) {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (_) => Home()),
+            );
+          }
+          if(index == 2) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => Rank()),
             );
           }
           if(index == 3) {
@@ -201,7 +208,7 @@ class _SettingsState extends State<Settings> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: "Library"),
-          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: "Rank"),
+          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: "Path"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
         ],

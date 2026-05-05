@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:proyecto/map.dart';
 import 'package:proyecto/profile.dart';
+import 'package:proyecto/rank.dart';
 import 'package:proyecto/settings.dart';
 import 'package:proyecto/utils/constants.dart' as con;
 
@@ -198,6 +199,12 @@ class _HomeState extends State<Home> {
         type: BottomNavigationBarType.fixed,
         currentIndex: 0,
         onTap: (index) {
+          if(index == 2) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => Rank()),
+            );
+          }
           if(index == 3) {
             Navigator.pushReplacement(
               context,
@@ -214,7 +221,7 @@ class _HomeState extends State<Home> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: "Library"),
-          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: "Rank"),
+          BottomNavigationBarItem(icon: Icon(Icons.bar_chart), label: "Path"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings"),
         ],
