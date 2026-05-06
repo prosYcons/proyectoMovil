@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto/home.dart';
+import 'package:proyecto/library.dart';
 import 'package:proyecto/profile.dart';
 import 'package:proyecto/settings.dart';
 import 'package:proyecto/utils/constants.dart' as con;
@@ -30,7 +31,7 @@ class _RankState extends State<Rank> {
                       "My Path",
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: 20  ,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -54,19 +55,19 @@ class _RankState extends State<Rank> {
               SizedBox(height: 20),
 
               //foundations
-              sectionTitle("Foundations", "Section completed"),
+              sectionTitle("Foundations", "In progress"),
 
               timelineItem("Bubble Sort", true),
               timelineItem("Selection Sort", true),
-              timelineItem("Merge Sort", true),
+              timelineItem("Merge Sort", false, isCurrent: true),
+              progressBar(),
 
               SizedBox(height: 15),
 
               //data strucutres
-              sectionTitle("Data Structures", "In progress"),
+              sectionTitle("Data Structures", "Section locked"),
 
-              timelineItem("Binary Search Trees", false, isCurrent: true),
-              progressBar(),
+              timelineItem("Binary Search Trees", false),
 
               timelineItem("AVL Trees", false),
 
@@ -76,10 +77,17 @@ class _RankState extends State<Rank> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: ElevatedButton.icon(
-                  onPressed: () {}, //PONER A LA VISTA QUE CORRESPONDA-----------------------------
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => Library(),
+                      ),
+                    );
+                  }, //PONER A LA VISTA QUE CORRESPONDA-----------------------------
                   icon: Icon(Icons.play_arrow, color: Colors.white),
                   label: Text(
-                    "Resume Binary Search Trees",
+                    "Resume Merge Sort",
                     style: TextStyle(color: Colors.white),
                   ),
                   style: ElevatedButton.styleFrom(
