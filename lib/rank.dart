@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto/home.dart';
 import 'package:proyecto/lesson.dart';
+import 'package:proyecto/library.dart';
 import 'package:proyecto/profile.dart';
 import 'package:proyecto/settings.dart';
 import 'package:proyecto/utils/constants.dart' as con;
@@ -81,7 +82,7 @@ class _RankState extends State<Rank> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => Library(),
+                        builder: (_) => Lesson(),
                       ),
                     );
                   }, //PONER A LA VISTA QUE CORRESPONDA-----------------------------
@@ -118,6 +119,12 @@ class _RankState extends State<Rank> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (_) => Home()),
+            );
+          }
+          if(index == 1) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => Library()),
             );
           }
           if(index == 3) {

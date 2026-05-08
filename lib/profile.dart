@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto/home.dart';
+import 'package:proyecto/library.dart';
 import 'package:proyecto/rank.dart';
 import 'package:proyecto/settings.dart';
 import 'package:proyecto/utils/constants.dart' as con;
@@ -196,6 +197,12 @@ class _ProfileState extends State<Profile> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (_) => Home()),
+            );
+          }
+          if(index == 1) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => Library()),
             );
           }
           if(index == 2) {

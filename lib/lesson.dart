@@ -3,14 +3,14 @@ import 'package:proyecto/home.dart';
 import 'package:proyecto/rank.dart';
 import 'package:proyecto/utils/constants.dart' as con;
 
-class Library extends StatefulWidget {
-  const Library({super.key});
+class Lesson extends StatefulWidget {
+  const Lesson({super.key});
 
   @override
-  State<Library> createState() => _LibraryState();
+  State<Lesson> createState() => _LessonState();
 }
 
-class _LibraryState extends State<Library> {
+class _LessonState extends State<Lesson> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:proyecto/library.dart';
 import 'package:proyecto/map.dart';
 import 'package:proyecto/profile.dart';
 import 'package:proyecto/rank.dart';
@@ -199,6 +200,12 @@ class _HomeState extends State<Home> {
         type: BottomNavigationBarType.fixed,
         currentIndex: 0,
         onTap: (index) {
+          if(index == 1) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (_) => Library()),
+            );
+          }
           if(index == 2) {
             Navigator.pushReplacement(
               context,
