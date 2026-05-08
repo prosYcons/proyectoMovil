@@ -95,52 +95,101 @@ class _LibraryState extends State<Library> {
                         color: con.colorBox,
                         borderRadius: BorderRadius.circular(15),
                       ),
+                      child: Image.asset("assets/images/arbol.png"),
+                    ),
+
+                    SizedBox(height: 20),
+
+                    //texto de la cosa
+                    infoCard(
+                      title: "Visualizer: Splitting Phase",
+                      content: "The array is recursively divided into two halves until each sub-array contains only one element",
+                    ),
+
+                    SizedBox(height: 10),
+
+                    infoCard(
+                        title: "Divide and Conquer",
+                        content: "Merge Sort is a classic Divide and Conquer algorithm. It breaks down a complex sorting problem into smaller, more manageable sub-problems."
+                    ),
+
+                    SizedBox(height: 10),
+
+                    //key concept
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16),
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        color: con.lightGreen,
+                        border: Border.all(color: con.brightGreen),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Text(
+                        "Key Concept: By splitting the list util each sub-list has only one element (which s inherently sorted), we can then 'merge' them back together in a sorted manner.",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+
+                    SizedBox(height: 20),
+
+                    //code
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16),
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                        color: con.colorBox,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          //arbol
-                          Wrap(
-                            alignment: WrapAlignment.center,
-                            spacing: 10,
-                            runSpacing: 10,
+                          Text(
+                            "MERGE_SORT.py",
+                            style: TextStyle(color: con.colorBlight),
+                            textAlign: TextAlign.start,
                           ),
-
-                          SizedBox(height: 15),
-
-                          //cntorles animacion
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.replay, color: Colors.white),
-                              SizedBox(width: 10),
-
-                              ElevatedButton.icon(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.play_arrow,
-                                  color: Colors.white,
-                                ),
-                                label: Text(
-                                  "Play Animation",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: con.colorBot,
-                                ),
-                              ),
-                            ],
-                          ),
+                          SizedBox(height: 5),
+                          Image.asset("assets/images/merge.jpg"),
                         ],
                       ),
                     ),
+
+                    SizedBox(height: 20),
                   ],
                 ),
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  //infoCards
+  static Widget infoCard({required String title, required String content}) {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.all(15),
+      decoration: BoxDecoration(
+        color: con.colorCont,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold
+            ),
+          ),
+          SizedBox(height: 5),
+          Text(
+            content,
+            style: TextStyle(color: con.colorBlight),
+          ),
+        ],
       ),
     );
   }

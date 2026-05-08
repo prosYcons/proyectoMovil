@@ -7,3 +7,4 @@ const colorBlight = Color(0xff5e7f8e);
 const colorBot = Color(0xff098cff);
 const colorSel = Color(0xff00f1fe);
 const brightGreen = Color(0xff50f437);
+const lightGreen = Color(0x5a69ff99);

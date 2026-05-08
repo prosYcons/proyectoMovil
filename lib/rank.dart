@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto/home.dart';
-import 'package:proyecto/library.dart';
+import 'package:proyecto/lesson.dart';
 import 'package:proyecto/profile.dart';
 import 'package:proyecto/settings.dart';
 import 'package:proyecto/utils/constants.dart' as con;
