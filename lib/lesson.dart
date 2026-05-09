@@ -20,6 +20,7 @@ class _LessonState extends State<Lesson> {
       appBar: AppBar(
         backgroundColor: con.colorCont,
         elevation: 0,
+        centerTitle: true,
         title: Text(
           "Merge Sort",
           style: TextStyle(color: Colors.white,),

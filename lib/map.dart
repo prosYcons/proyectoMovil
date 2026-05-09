@@ -23,6 +23,7 @@ class _MapaState extends State<Mapa> {
       appBar: AppBar(
         backgroundColor: con.colorCont,
         elevation: 0,
+        centerTitle: true,
         title: Text(
           "Google Offices",
           style: TextStyle(color: Colors.white,),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto/home.dart';
 import 'package:proyecto/profile.dart';
+import 'package:proyecto/quiz.dart';
 import 'package:proyecto/rank.dart';
 import 'package:proyecto/settings.dart';
 import 'package:proyecto/utils/constants.dart' as con;
@@ -22,6 +23,7 @@ class _LibraryState extends State<Library> {
       appBar: AppBar(
         backgroundColor: con.colorCont,
         elevation: 0,
+        centerTitle: true,
         title: Text(
           "Course Details",
           style: TextStyle(color: Colors.white,),
@@ -46,30 +48,11 @@ class _LibraryState extends State<Library> {
               SizedBox(height: 20),
 
               //grafica
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 16),
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Color(0xff002647), Color(0xff005096)],
-                  ),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: List.generate(
-                    7,
-                    (index) => Container(
-                      width: 30,
-                      height: 40.0 + (index * 15),
-                      decoration: BoxDecoration(
-                        color: con.colorBot,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                  ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  "assets/images/grafica.png",
+                  fit: BoxFit.cover,
                 ),
               ),
 
@@ -149,7 +132,14 @@ class _LibraryState extends State<Library> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: ElevatedButton.icon(
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => Quiz(),
+                      ),
+                    );
+                  },
                   icon: Icon(
                     Icons.arrow_forward,
                     color: Colors.white,
